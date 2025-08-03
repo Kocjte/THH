@@ -2,7 +2,13 @@
 morm se pomislt ->
 [info wd robe](https://arxiv.org/pdf/2506.01849)
 
+-------------------------------------------------------------------------------------------------------------------------
+
 Modelli SOTA z delt te robe n karti k pero niso z Time series[:/](https://securing.ai/ai-security/neural-trojan-attacks/)
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
 
 Kr ns briga ---Defensive Measures
 
@@ -27,17 +33,17 @@ Regularization techniques are methods used in machine learning to prevent overfi
 Data Augmentation
 
 Data augmentation is a widely-used technique in machine learning, especially in deep learning, to artificially expand the size of training datasets by applying various transformations to the original data. The primary goal of data augmentation is to make models more robust and improve their generalization capabilities. Augmenting the training data in various ways can help the model generalize better and reduce its susceptibility to Trojans [3]. Techniques like random cropping, rotation, or color jitter can be effective.
-
-Detection
-
+-----------
+|Detection|
+-----------
 Detecting a Trojan attack is often like finding a needle in a haystack, given the complexity of neural networks. However, specialized methods are being developed to identify these threats.
 
 Anomaly Detection
 
 Anomaly detection, also known as outlier detection, is a technique used to identify patterns in data that do not conform to expected behaviour. By continuously monitoring the behaviour of a deployed model, anomaly detection can identify when the model starts producing unexpected outputs. If a neural Trojan is activated, it might cause the model to behave anomalously, triggering an alert.
-
-Neural Cleanse
-
+--------------
+|Neural Cleanse|
+--------------
 Neural Cleanse is a defense mechanism that identifies potential backdoor triggers in a model and then neutralizes them. It works by analyzing the model’s outputs to identify patterns that are abnormally influential in the decision-making process.
 
 Reverse Engineering
