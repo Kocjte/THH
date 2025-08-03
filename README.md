@@ -4,6 +4,8 @@
 
 [Notebook de esmpio n kaggle](https://www.kaggle.com/code/ramezashendy/poisoned-models-probing-notebook)
 
+[architettura wd modella k tabju wni](https://towardsdatascience.com/forecasting-with-nhits-uniting-deep-learning-signal-processing-theory-for-superior-accuracy-9933b119a494/)
+
 -------------------------------------------------------------------------------------------------------------------------
 
 Modelli SOTA z delt te robe n karti k pero niso z Time series[:/](https://securing.ai/ai-security/neural-trojan-attacks/)
