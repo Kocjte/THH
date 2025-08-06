@@ -1,1 +1,4 @@
-morm dobt kasne versioni boju rable
+torch==2.6.0
+darts==0.33.0
+scikit-learn==1.6.1
+
