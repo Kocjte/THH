@@ -1,6 +1,6 @@
 from google.colab import drive
 import os
-from darts import NHiTSModel
+from darts.models import NHiTSModel
 
 
 
