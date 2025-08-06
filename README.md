@@ -16,7 +16,7 @@ Blocco z dat u google colab
 
 blocco z Kaggle
 <pre>
-!git clone https://github.com/tuo-username/Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations.git
+!git clone https://github.com/Kocjte/Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations.git
 %cd Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations
 !pip install -r requirements.txt
 !python main.py --runtime kaggle
