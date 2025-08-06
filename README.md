@@ -8,6 +8,23 @@
 
 -------------------------------------------------------------------------------------------------------------------------
 
+Blocco z dat u google colab
+<pre>
+!git clone https://github.com/Kocjte/Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations.git
+%cd Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations/
+!pip install -r requirements.txt</pre>
+
+blocco z Kaggle
+<pre>
+!git clone https://github.com/tuo-username/Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations.git
+%cd Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations
+!pip install -r requirements.txt
+!python main.py --runtime kaggle
+</pre>
+  
+
+-------------------------------------------------------------------------------------------------------------------------
+
 Modelli SOTA z delt te robe n karti k pero niso z Time series[:/](https://securing.ai/ai-security/neural-trojan-attacks/)
 
 
