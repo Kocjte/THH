@@ -33,20 +33,13 @@ def main(env="colab", optimizer_name="sgd", save=False):
 
     # Seleziona ottimizzatore
     optimizer = optimizers.get(optimizer_name)
-    if optimizer is None:
-        raise ValueError(f"Optimizer '{optimizer_name}' not found.")
-
-    # Modello pulito
-    clean_model = CleanModel()
-    optimizer(clean_model, data)
-
-    # Modelli avvelenati
-    for i in range(1, 46):
-        model = PoisonedModel(poison_id=i)
-        optimizer(model, data)
-
-    # Output finale
-    final_predictions = clean_model.predict(data)  # Supponiamo che esista predict()
+    
+    triggers = [] 
+    for each model:
+        trig = optimize_trigger(model)
+        triggers.append(trig.flatten())
+    submission_df = pd.DataFrame(triggers, columns=[f"val_{i}" for i in range(225)])
+    submission_df.to_csv("submission.csv", index=False)
 
     if save:
         output_df = pd.DataFrame({
