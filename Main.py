@@ -27,30 +27,44 @@ import sys
 
 #--------------
 
-def main(env="kaggle", optimizer_name="sgd"):
-    # Load data
+def main(env="local", optimizer_name="sgd", save=False):
+    # Carica i dati
     data = load_data(env=env)
 
-    # Load optimizer function
+    # Seleziona ottimizzatore
     optimizer = optimizers.get(optimizer_name)
     if optimizer is None:
         raise ValueError(f"Optimizer '{optimizer_name}' not found.")
 
-    # Initialize and train clean model
+    # Modello pulito
     clean_model = CleanModel()
     optimizer(clean_model, data)
 
-    # Initialize and train 45 poisoned models
+    # Modelli avvelenati
     for i in range(1, 46):
         model = PoisonedModel(poison_id=i)
         optimizer(model, data)
 
+    # Output finale
+    final_predictions = clean_model.predict(data)  # Supponiamo che esista predict()
+
+    if save:
+        output_df = pd.DataFrame({
+            "id": data["id"],
+            "prediction": final_predictions
+        })
+        output_df.to_csv("submission.csv", index=False)
+        print("[INFO] Predictions saved to submission.csv")
+    else:
+        print("[INFO] Final predictions (sample):")
+        print(final_predictions[:10])  # o qualsiasi altro "principato" 😄
+
 if __name__ == "__main__":
-    # Parse args from command line or set manually
-    # Example: python main.py kaggle adam
+    # Esempio: python main.py kaggle adam save
     args = sys.argv[1:]
     env = args[0] if len(args) > 0 else "local"
     opt = args[1] if len(args) > 1 else "sgd"
+    save_flag = args[2].lower() == "save" if len(args) > 2 else False
 
-    main(env=env, optimizer_name=opt)
+    main(env=env, optimizer_name=opt, save=save_flag)
 
