@@ -20,9 +20,7 @@ plt.style.use('fivethirtyeight')
 
 #struttura generale main 
 from data_loader import load_data
-from models.clean_model import CleanModel
-from models.poisoned_model import PoisonedModel
-from optimisation import optimizers
+from optimisation import base
 import sys
 
 #--------------
@@ -35,7 +33,8 @@ def main(env="colab", optimizer_name="sgd", save=False):
     optimizer = optimizers.get(optimizer_name)
     
     triggers = [] 
-    for each model:
+    model = 1
+    for model in range(45):
         trig = optimize_trigger(model)
         triggers.append(trig.flatten())
     submission_df = pd.DataFrame(triggers, columns=[f"val_{i}" for i in range(225)])
