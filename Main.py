@@ -57,7 +57,7 @@ def main(env="colab", optimizer_name="sgd", save=False):
         print("[INFO] Predictions saved to submission.csv")
     else:
         print("[INFO] Final predictions (sample):")
-        print(final_predictions[:10])  # o qualsiasi altro "principato" 😄
+        print(final_predictions[:10]) 
 
 if __name__ == "__main__":
     # Esempio: python main.py kaggle adam save
