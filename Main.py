@@ -27,7 +27,7 @@ import sys
 
 #--------------
 
-def main(env="local", optimizer_name="sgd", save=False):
+def main(env="colab", optimizer_name="sgd", save=False):
     # Carica i dati
     data = load_data(env=env)
 

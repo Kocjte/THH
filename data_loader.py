@@ -1,7 +1,7 @@
 from google.colab import drive
 import os
 from darts.models import NHiTSModel
-
+import numpy as np
 
 
 def load_data(env="local"):
