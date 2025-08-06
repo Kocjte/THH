@@ -1,6 +1,7 @@
 from google.colab import drive
 import os
 from darts.models import NHiTSModel
+import pandas as pd
 import numpy as np
 
 
@@ -8,18 +9,23 @@ def load_data(env="local"):
     if env == "colab":
         competition_name = "trojan-horse-hunt-in-space"
 
-        
+        # Mount Google Drive
         drive.mount("/content/drive")
 
+        # Setup Kaggle credentials
         kaggle_creds_path = "/content/drive/MyDrive/kaggle.json"
         os.system("pip install kaggle --quiet")
-        os.system("mkdir ~/.kaggle")
-        os.system("cp '/content/drive/MyDrive/kaggle.json' ~/.kaggle/")
+        os.system("mkdir -p ~/.kaggle")
+        os.system(f"cp {kaggle_creds_path} ~/.kaggle/kaggle.json")
         os.system("chmod 600 ~/.kaggle/kaggle.json")
-        os.system("kaggle competitions download -c {competition_name}")
-        os.system("mkdir kaggle_data")
-        os.system("unzip {competition_name + '.zip'} -d kaggle_data")
-        os.system("drive.flush_and_unmount()")
+
+        # Download and unzip competition data
+        os.system(f"kaggle competitions download -c {competition_name}")
+        os.system("mkdir -p kaggle_data")
+        os.system(f"unzip {competition_name + '.zip'} -d kaggle_data")
+
+        # Optional: Unmount Google Drive after use
+        drive.flush_and_unmount()
 
     elif env == "kaggle":
         # Read the training CSV into a DataFrame
