@@ -1,3 +1,7 @@
+import darts
+from darts.models import NHiTSModel
+
+
 class Optimization:
     """
     End-to-end trigger-reconstruction helper for the “Trojan Horse Hunt” baseline.
