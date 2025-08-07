@@ -30,7 +30,7 @@ def main(env="colab", optimizer_name="sgd", save=False):
     data = load_data(env=env)
 
     # Seleziona ottimizzatore
-    optimizer = optimizers.get(optimizer_name)
+    '''optimizer = base.get(optimizer_name)
     
     triggers = [] 
     model = 1
@@ -53,10 +53,11 @@ def main(env="colab", optimizer_name="sgd", save=False):
 
 if __name__ == "__main__":
     # Esempio: python main.py kaggle adam save
+ 
     args = sys.argv[1:]
     env = args[0] if len(args) > 0 else "local"
     opt = args[1] if len(args) > 1 else "sgd"
     save_flag = args[2].lower() == "save" if len(args) > 2 else False
 
     main(env=env, optimizer_name=opt, save=save_flag)
-
+    '''
