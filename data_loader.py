@@ -27,6 +27,12 @@ def load_data(env="local"):
         # Optional: Unmount Google Drive after use
         drive.flush_and_unmount()
 
+             # 3) Load clean model & metadata
+        clean_model = NHiTSModel.load("models/clean_model.pth")
+        meta_df     = pd.read_csv("data/meta.csv")
+        poisoned_paths = meta_df["path"].tolist()
+        return clean_model, poisoned_paths, meta_df
+
     elif env == "kaggle":
         # Read the training CSV into a DataFrame
         train_data_df = pd.read_csv(
