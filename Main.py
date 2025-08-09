@@ -22,7 +22,7 @@ import sys
 
 #--------------
 
-def main(env="colab", optimizer_name="sgd", save=False):
+def main(env="colab", save=False):
     # Carica i dati
     clean_model, meta_df, poisoned_model = load_data(env=env)
     print(clean_model,meta_df, poisoned_model)
