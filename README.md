@@ -10,13 +10,13 @@
 
 Blocco z dat u google colab
 <pre>
-!git clone https://github.com/Kocjte/Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations.git
+!git clone https://github.com/Kocjte/THH.git
 %cd Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations/
 !pip install -r requirements.txt</pre>
 
 blocco z Kaggle
 <pre>
-!git clone https://github.com/Kocjte/Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations.git
+!git clone https://github.com/Kocjte/THH.git
 %cd Trojan-Horse-Hunt-in-Time-Series-Forecasting-for-Space-Operations
 !pip install -r requirements.txt
 !python main.py --runtime kaggle
