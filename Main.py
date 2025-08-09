@@ -17,7 +17,7 @@ from darts.utils.model_selection import train_test_split
 
 #struttura generale main 
 from data_loader import load_data
-from optimisation import base
+#from optimisation import base
 import sys
 
 #--------------
