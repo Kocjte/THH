@@ -14,10 +14,6 @@ from darts import TimeSeries
 from darts.models import NHiTSModel
 from darts.utils.model_selection import train_test_split
 '''
-# Suppress warnings and set figure size
-warnings.filterwarnings("ignore")
-plt.rcParams['figure.figsize'] = (12, 5)
-plt.style.use('fivethirtyeight')
 
 #struttura generale main 
 from data_loader import load_data
@@ -28,10 +24,10 @@ import sys
 
 def main(env="colab", optimizer_name="sgd", save=False):
     # Carica i dati
-    data = load_data(env=env)
-
+    clean_model, meta_df, poisoned_model = load_data(env=env)
+    print(clean_model,meta_df, poisoned_model)
     # Seleziona ottimizzatore
-    '''optimizer = base.get(optimizer_name)
+    '''optimizer = base.get(optimizer_name,meta_df, poisoned_model)
     
     triggers = [] 
     model = 1

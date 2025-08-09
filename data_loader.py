@@ -31,8 +31,16 @@ def load_data(env="local"):
          # 3) Load clean model & metadata
         clean_model = NHiTSModel.load("models/clean_model.pth")
         meta_df     = pd.read_csv("data/meta.csv")
-        poisoned_paths = meta_df["path"].tolist()
-        return clean_model, poisoned_paths, meta_df
+        def load_poisoned_model(model_id):
+            poisoned_model_path = (
+                "/kaggle/input/trojan-horse-hunt-in-space/poisoned_models"
+                f"/poisoned_model_{model_id}/poisoned_model.pt"
+            )
+
+        poisoned_model = []
+        for model_id in range(1, 46):
+            poisoned_model.append(load_poisoned_model(model_id))
+        return clean_model, meta_df, poisoned_model
 
     elif env == "kaggle":
         # Read the training CSV into a DataFrame
@@ -43,13 +51,7 @@ def load_data(env="local"):
         
         # Read the 45 models; note that model_id starts at 1.
         
-        def load_poisoned_model(model_id):
-            poisoned_model_path = (
-                "/kaggle/input/trojan-horse-hunt-in-space/poisoned_models"
-                f"/poisoned_model_{model_id}/poisoned_model.pt"
-            )
-            poisoned_model = NHiTSModel.load(poisoned_model_path)
-            return poisoned_model
+   
 
         poisoned_model = [None]
         for model_id in range(1, 46):
