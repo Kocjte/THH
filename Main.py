@@ -47,14 +47,10 @@ def main(env="colab", save=False):
     else:
         print("[INFO] Final predictions (sample):")
         print(final_predictions[:10]) 
-
+'''
 if __name__ == "__main__":
     # Esempio: python main.py kaggle adam save
- 
-    args = sys.argv[1:]
-    env = args[0] if len(args) > 0 else "local"
-    opt = args[1] if len(args) > 1 else "sgd"
-    save_flag = args[2].lower() == "save" if len(args) > 2 else False
-
-    main(env=env, optimizer_name=opt, save=save_flag)
-    '''
+    env= 'colab'
+    sav_flag=False
+    main(env=env,  save=save_flag)
+    
