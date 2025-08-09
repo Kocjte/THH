@@ -51,6 +51,6 @@ def main(env="colab", save=False):
 if __name__ == "__main__":
     # Esempio: python main.py kaggle adam save
     env= 'colab'
-    sav_flag=False
+    save_flag=False
     main(env=env,  save=save_flag)
     
